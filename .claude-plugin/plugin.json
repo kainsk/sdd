@@ -1,0 +1,23 @@
+{
+  "name": "sdd",
+  "version": "1.0.0",
+  "description": "Spec-Driven Development handbook + toolkit. Cog-style memory and pattern routing, gates taxonomy, 10 slash commands (/sdd:dry-run, /sdd:bug, /sdd:second-opinion, …), 6 bash scripts in PATH, 7 templates, 50 regression tests.",
+  "author": {
+    "name": "kainsk"
+  },
+  "homepage": "https://github.com/kainsk/sdd",
+  "repository": "https://github.com/kainsk/sdd",
+  "license": "MIT",
+  "keywords": [
+    "sdd",
+    "spec-driven-development",
+    "dry-run",
+    "patterns",
+    "gherkin",
+    "bdd",
+    "pattern-routing",
+    "memory",
+    "gates",
+    "handbook"
+  ]
+}

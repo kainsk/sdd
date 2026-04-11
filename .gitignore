@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Claude Code local state
+.claude/
+!.claude-plugin/
+
+# Logs & temp
+*.log
+*.tmp
+*.bak
+tmp/
+.tmp/
+
+# OS / misc
+Thumbs.db
+desktop.ini
+
+# Generated SDD artifacts (SSOT: link-index / scorecard / evolve-log are produced by tooling)
+# Uncomment if you want to ignore them in downstream projects — in this handbook repo they are not tracked here.
+# link-index.md
+# scorecard.md
+# evolve-log.md

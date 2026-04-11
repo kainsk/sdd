@@ -1,0 +1,33 @@
+{
+  "name": "sdd-marketplace",
+  "owner": {
+    "name": "kainsk"
+  },
+  "metadata": {
+    "description": "SDD handbook + toolkit as a Claude Code plugin",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "sdd",
+      "source": "./",
+      "description": "Spec-Driven Development handbook + executable toolkit. Cog-style memory + pattern routing + gates taxonomy + 10 slash commands.",
+      "version": "1.0.0",
+      "author": {
+        "name": "kainsk"
+      },
+      "homepage": "https://github.com/kainsk/sdd",
+      "repository": "https://github.com/kainsk/sdd",
+      "license": "MIT",
+      "keywords": [
+        "sdd",
+        "spec-driven-development",
+        "dry-run",
+        "patterns",
+        "gherkin",
+        "bdd"
+      ],
+      "category": "development-workflow"
+    }
+  ]
+}

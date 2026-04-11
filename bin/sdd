@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# sdd — CLI wrapper that dispatches to bin/sdd-<cmd>.sh
+# Available globally when the SDD plugin is enabled in Claude Code.
+set -eu
+
+SELF="$(cd "$(dirname "$0")" && pwd)"
+
+usage() {
+  cat <<EOF
+Usage: sdd <command> [args...]
+
+Commands:
+  validate       [specs-dir]   Integrity check (errors + warnings)
+  link-index     [specs-dir]   Generate backlink index (stdout)
+  scorecard      [specs-dir]   Compute spec health metrics (stdout)
+  foresight      [specs-dir]   Convergence signals and blind spots (stdout)
+  install-hooks                Install git pre-commit hook
+  test                         Run regression test suite
+  help                         Show this message
+
+Environment:
+  SDD_SPECS                    Default specs directory (overrides "specs")
+  SDD_MEMORY                   Default memory directory (overrides "memory")
+
+Examples:
+  sdd validate specs
+  sdd scorecard specs > specs/scorecard.md
+  SDD_SPECS=specs sdd foresight
+  sdd install-hooks
+  sdd test
+EOF
+}
+
+cmd="${1:-help}"
+shift || true
+
+case "$cmd" in
+  validate)      exec bash "$SELF/sdd-validate.sh" "$@" ;;
+  link-index)    exec bash "$SELF/sdd-link-index.sh" "$@" ;;
+  scorecard)     exec bash "$SELF/sdd-scorecard.sh" "$@" ;;
+  foresight)     exec bash "$SELF/sdd-foresight.sh" "$@" ;;
+  install-hooks) exec bash "$SELF/sdd-install-hooks.sh" "$@" ;;
+  test)          exec bash "$SELF/sdd-test.sh" "$@" ;;
+  help|-h|--help) usage ;;
+  *)
+    echo "unknown command: $cmd" >&2
+    echo >&2
+    usage >&2
+    exit 2
+    ;;
+esac
